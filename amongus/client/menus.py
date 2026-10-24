@@ -1,5 +1,6 @@
 """Main menu, LAN browser, connecting screen, help and message screens."""
 import math
+import sys
 import threading
 import time
 
@@ -64,8 +65,10 @@ class MainMenu(MenuBase):
             Button((bx, 320, 340, 58), "HOST GAME", self.host, size=30, colour=(40, 120, 60)),
             Button((bx, 388, 340, 58), "JOIN GAME", self.join, size=30, colour=(40, 80, 150)),
             Button((bx, 456, 340, 50), "PRACTICE WITH BOTS", self.practice, size=24),
-            Button((bx, 516, 165, 46), "HOW TO PLAY", self.help, size=18),
-            Button((bx + 175, 516, 165, 46), "CLASSIC MODE", self.app.launch_classic, size=18),
+            # the packaged .exe has no Python to run classic.py with, so it only gets HOW TO PLAY
+            *([Button((bx, 516, 340, 46), "HOW TO PLAY", self.help, size=18)] if getattr(sys, "frozen", False) else
+              [Button((bx, 516, 165, 46), "HOW TO PLAY", self.help, size=18),
+               Button((bx + 175, 516, 165, 46), "CLASSIC MODE", self.app.launch_classic, size=18)]),
             Button((bx, 572, 340, 46), "QUIT", self.quit, size=22, colour=(120, 40, 40), sound="back"),
         ]
         self.error = ""

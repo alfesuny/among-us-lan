@@ -4,7 +4,13 @@ An unofficial Among Us clone in Python/pygame for **3–12 players on the same l
 
 Map, art and sounds are from the original project (Innersloth assets, see Credits).
 
-## Quick start
+## Easiest: no Python needed (Windows)
+
+Download **`AmongUsLAN.exe`** from the [Releases page](../../releases/latest), copy it to every PC and double-click it. It takes a few seconds to start (it unpacks itself). The first time, Windows may show *"Windows protected your PC"*: click **More info → Run anyway**. Then host/join exactly as described below.
+
+To rebuild the exe yourself: `pip install pyinstaller` and run `build_exe.bat` (output: `dist\AmongUsLAN.exe`).
+
+## Quick start (with Python)
 
 **On every PC** (once):
 1. Install **Python 3.8+** from [python.org](https://www.python.org/downloads/). Tick **"Add python.exe to PATH"** during setup.

@@ -4,3 +4,5 @@ tests/_shots/
 tests/_multi/
 build/
 amongus_error.log
+dist/
+*.spec
