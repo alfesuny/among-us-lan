@@ -1,0 +1,5 @@
+pygame>=2.1
+# line-of-sight vision (walls block sight); the game still runs without it, with radius-only vision
+numpy>=1.21
+# only needed for the old single-player "Classic Mode" (classic.py)
+pytmx>=3.31
